@@ -41,6 +41,7 @@ const myFont = localFont({
 	variable: '--my-font'
 });
 
+
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<main className={`${myFont.variable} font-sans`}>
