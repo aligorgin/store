@@ -1,18 +1,16 @@
+import { faker } from '@faker-js/faker';
+import { Inter } from '@next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '../styles/Home.module.css';
-
-import Words from './Words';
 import Link from 'next/link';
-import { faker } from '@faker-js/faker';
-
-// swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, Navigation } from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
-// import 'swiper/css/autoplay';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import styles from '../styles/Home.module.css';
+import Words from './Words';
 
 const inter = Inter({ subsets: ['latin'] });
 
