@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# database
+/prisma/db.sqlite
+/prisma/db.sqlite-journal
+
 # next.js
 /.next/
 /out/
@@ -34,3 +38,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# other 
+.vscode
+fonts/
+.env
+.env*.local
