@@ -9,7 +9,6 @@ import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import styles from '../styles/Home.module.css';
 import Words from './Words';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -29,7 +28,7 @@ export default function Home() {
 				<nav className="flex w-full items-center justify-between pt-6">
 					<div>
 						<div className="cursor-pointer rounded bg-orange-700 px-3 pb-2 pt-1 font-[300] transition hover:bg-orange-600 active:scale-90">
-							hey
+							{Words.signIn}
 						</div>
 					</div>
 					<div className="flex flex-row-reverse items-center">
@@ -39,9 +38,15 @@ export default function Home() {
 							</div>
 						</Link>
 						<div className="flex space-x-6 font-[200]">
-							<div className="cursor-pointer opacity-70 transition hover:opacity-100">hey</div>
-							<div className="cursor-pointer opacity-70 transition hover:opacity-100">hey</div>
-							<div className="cursor-pointer opacity-70 transition hover:opacity-100">hey</div>
+							<div className="cursor-pointer opacity-70 transition hover:opacity-100">
+								{Words.nav3}
+							</div>
+							<div className="cursor-pointer opacity-70 transition hover:opacity-100">
+								{Words.nav2}
+							</div>
+							<div className="cursor-pointer opacity-70 transition hover:opacity-100">
+								{Words.nav1}
+							</div>
 						</div>
 					</div>
 				</nav>
