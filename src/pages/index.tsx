@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker';
-import { Inter } from '@next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +10,7 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import data from '../../data.json';
-import Card from '../components/card';
+import Card from '../components/Card';
 import Words from './Words';
 
 export default function Home() {
@@ -50,7 +49,7 @@ export default function Home() {
 									{Words.nav2}
 								</div>
 							</Link>
-							<Link href={'/'}>
+							<Link href={'/ma'}>
 								<div className="cursor-pointer opacity-70 transition hover:opacity-100">
 									{Words.nav1}
 								</div>
