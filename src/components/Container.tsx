@@ -14,8 +14,8 @@ function NavItem({ href, text }: { href: string; text: string }) {
 			href={href}
 			className={clsx(
 				isActive
-					? 'font-light text-neutral-800 dark:text-neutral-200'
-					: 'font-thin text-neutral-600 dark:text-neutral-400',
+					? 'font-bold text-neutral-800 dark:text-neutral-200'
+					: 'font-light text-neutral-600 dark:text-neutral-400',
 					'cursor-pointer'
 			)}
 		>
