@@ -16,7 +16,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
 				isActive
 					? 'font-bold text-neutral-800 dark:text-neutral-200'
 					: 'font-light text-neutral-600 dark:text-neutral-400',
-					'cursor-pointer'
+					'cursor-pointer hover:dark:text-neutral-200'
 			)}
 		>
 			<span>{text}</span>
