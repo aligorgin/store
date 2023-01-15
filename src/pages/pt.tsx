@@ -58,6 +58,15 @@ export default function Pt() {
 	);
 }
 
+function Game (){
+	return (
+		<div className='flex'>
+			<div>game board</div>
+			<div>game history</div>
+		</div>
+	)
+}
+
 function calculateWinner(squares: any) {
 	const lines: any[] = [
 		[0, 1, 2],
