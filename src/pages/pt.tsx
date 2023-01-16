@@ -61,7 +61,7 @@ export default function Pt() {
 function Game (){
 	return (
 		<div className='flex'>
-			<div>game board</div>
+			<div>game board change to be complete later</div>
 			<div>game history</div>
 		</div>
 	)
