@@ -11,10 +11,7 @@ function Square({ value, onSquareClick }: { value: string | null; onSquareClick:
 	);
 }
 
-export default function Pt() {
-	const [xIsNext, setXIsNext] = useState<boolean>(true);
-	const [squares, setSquares] = useState<any[]>(Array(9).fill(null));
-
+function Pt({ xIsNext, squares, onPlay }: { xIsNext: boolean; squares: any; onPlay: any }) {
 	const winner = calculateWinner(squares);
 	let status;
 	if (winner) {
@@ -31,8 +28,7 @@ export default function Pt() {
 		} else {
 			nextSquares[i] = 'O';
 		}
-		setSquares(nextSquares);
-		setXIsNext(!xIsNext);
+		onPlay(nextSquares);
 	}
 
 	return (
@@ -50,21 +46,53 @@ export default function Pt() {
 					<Square value={squares[7]} onSquareClick={() => handleClick(7)} />
 					<Square value={squares[8]} onSquareClick={() => handleClick(8)} />
 				</div>
-				<div>
+				{/* <div>
 					<button className="rounded bg-neutral-700 px-6 py-1 text-lg">hello</button>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);
 }
 
-function Game (){
+export default function Game() {
+	const [xIsNext, setXIsNext] = useState(true);
+	const [history, setHistory] = useState([Array(9).fill(null)]);
+	const currentSquares = history[history.length - 1];
+
+	function handlePlay(nextSquares: any) {
+		setHistory([...history, nextSquares]);
+		setXIsNext(!xIsNext);
+	}
+
+	function jumpTo(nextMove) {
+		//todo
+	}
+
+	const moves = history.map((squares, move) => {
+		let description;
+		if (move > 0) {
+			description = `Go to move #${move}`;
+		} else {
+			description = 'Go to game start';
+		}
+		return (
+			<li key={move}>
+				<button className='rounded bg-neutral-700 px-6 py-1 text-lg' onClick={() => jumpTo(move)}>{description}</button>
+			</li>
+		);
+	});
+
 	return (
-		<div className='flex'>
-			<div>game board change to be complete later</div>
-			<div>game history</div>
+		<div className="m-8 flex">
+			<div>
+
+			<Pt xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+			</div>
+			<div className="flex flex-col pt-20 pl-12">
+				<ol>{moves}</ol>
+			</div>
 		</div>
-	)
+	);
 }
 
 function calculateWinner(squares: any) {
