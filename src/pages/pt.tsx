@@ -64,8 +64,8 @@ export default function Game() {
 		setXIsNext(!xIsNext);
 	}
 
-	function jumpTo(nextMove) {
-		//todo
+	function jumpTo(nextMove: any) {
+		console.log(nextMove);
 	}
 
 	const moves = history.map((squares, move) => {
@@ -77,7 +77,9 @@ export default function Game() {
 		}
 		return (
 			<li key={move}>
-				<button className='rounded bg-neutral-700 px-6 py-1 text-lg' onClick={() => jumpTo(move)}>{description}</button>
+				<button className="rounded bg-neutral-700 px-6 py-1 text-lg" onClick={() => jumpTo(move)}>
+					{description}
+				</button>
 			</li>
 		);
 	});
@@ -85,8 +87,7 @@ export default function Game() {
 	return (
 		<div className="m-8 flex">
 			<div>
-
-			<Pt xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+				<Pt xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
 			</div>
 			<div className="flex flex-col pt-20 pl-12">
 				<ol>{moves}</ol>
