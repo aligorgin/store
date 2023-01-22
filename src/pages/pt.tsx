@@ -65,7 +65,9 @@ export default function Game() {
 	}
 
 	function jumpTo(nextMove: any) {
-		console.log(nextMove);
+		console.log(nextMove); 
+		console.log(history);
+		
 	}
 
 	const moves = history.map((squares, move) => {
