@@ -11,7 +11,7 @@ function Square({ value, onSquareClick }: { value: string | null; onSquareClick:
 	);
 }
 
-function Pt({ xIsNext, squares, onPlay }: { xIsNext: boolean; squares: any; onPlay: any }) {
+function Board({ xIsNext, squares, onPlay }: { xIsNext: boolean; squares: any; onPlay: any }) {
 	const winner = calculateWinner(squares);
 	let status;
 	if (winner) {
@@ -46,9 +46,6 @@ function Pt({ xIsNext, squares, onPlay }: { xIsNext: boolean; squares: any; onPl
 					<Square value={squares[7]} onSquareClick={() => handleClick(7)} />
 					<Square value={squares[8]} onSquareClick={() => handleClick(8)} />
 				</div>
-				{/* <div>
-					<button className="rounded bg-neutral-700 px-6 py-1 text-lg">hello</button>
-				</div> */}
 			</div>
 		</>
 	);
@@ -58,16 +55,15 @@ export default function Game() {
 	const [xIsNext, setXIsNext] = useState(true);
 	const [history, setHistory] = useState([Array(9).fill(null)]);
 	const currentSquares = history[history.length - 1];
-
+	
 	function handlePlay(nextSquares: any) {
 		setHistory([...history, nextSquares]);
 		setXIsNext(!xIsNext);
 	}
 
 	function jumpTo(nextMove: any) {
-		console.log(nextMove); 
-		console.log(history);
-		
+		// console.log(nextMove);
+		// console.log(history);
 	}
 
 	const moves = history.map((squares, move) => {
@@ -79,7 +75,10 @@ export default function Game() {
 		}
 		return (
 			<li key={move}>
-				<button className="rounded bg-neutral-700 px-6 py-1 text-lg" onClick={() => jumpTo(move)}>
+				<button
+					className="mb-2 rounded bg-neutral-700 px-6 py-1 text-lg"
+					onClick={() => jumpTo(move)}
+				>
 					{description}
 				</button>
 			</li>
@@ -89,7 +88,7 @@ export default function Game() {
 	return (
 		<div className="m-8 flex">
 			<div>
-				<Pt xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+				<Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
 			</div>
 			<div className="flex flex-col pt-20 pl-12">
 				<ol>{moves}</ol>
