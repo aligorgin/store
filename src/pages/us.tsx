@@ -1,4 +1,4 @@
-import Container from '../components/Container';
+import Container from '../ui/components/Container';
 
 export default function Us() {
 	return (

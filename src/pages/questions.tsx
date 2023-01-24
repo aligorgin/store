@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import Container from '../components/Container';
-import Disclosure from '../components/Disclosure';
+import Container from '../ui/components/Container';
+import Disclosure from '../ui/components/Disclosure';
 
 export default function Questions() {
 	const [activeIndex, setActiveIndex] = useState<number>(0);

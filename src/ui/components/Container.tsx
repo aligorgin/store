@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import Words from '../pages/Words';
+import Words from '../../pages/Words';
 
 function NavItem({ href, text }: { href: string; text: string }) {
 	const router = useRouter();
@@ -16,7 +16,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
 				isActive
 					? 'font-bold text-neutral-800 dark:text-neutral-200'
 					: 'font-light text-neutral-600 dark:text-neutral-400',
-					'cursor-pointer hover:dark:text-neutral-200'
+				'cursor-pointer hover:dark:text-neutral-200'
 			)}
 		>
 			<span>{text}</span>
@@ -31,7 +31,6 @@ export default function Container({
 	title?: string;
 	children: React.ReactNode;
 }) {
-
 	return (
 		<div className="mx-auto max-w-4xl">
 			<Head>
@@ -53,10 +52,10 @@ export default function Container({
 						</div>
 					</Link>
 					<div className="flex space-x-6">
-						<NavItem href='/us' text={Words.nav3}/>
-						<NavItem href='/questions' text={Words.nav2}/>
-						<NavItem href='/products' text={Words.nav1}/>
-					</div> 
+						<NavItem href="/us" text={Words.nav3} />
+						<NavItem href="/questions" text={Words.nav2} />
+						<NavItem href="/products" text={Words.nav1} />
+					</div>
 				</div>
 			</nav>
 			{children}

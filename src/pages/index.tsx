@@ -10,8 +10,8 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import data from '../../data.json';
-import Card from '../components/Card';
-import Container from '../components/Container';
+import Card from '../ui/components/Card';
+import Container from '../ui/components/Container';
 import Words from './Words';
 
 export default function Home() {
@@ -20,7 +20,6 @@ export default function Home() {
 	return (
 		<Suspense fallback={null}>
 			<Container>
-
 				<section className="mt-8 w-full">
 					<Swiper
 						pagination={{ clickable: true }}
@@ -99,7 +98,7 @@ export default function Home() {
 				</section>
 
 				<section className="mt-10">
-					<div className="text-right text-2xl font-medium">{Words.heading2}</div>
+					<div className="text-right text-2xl font-medium">{Words.heading}</div>
 					<div className=" mt-4">
 						<ScrollContainer horizontal={true} className="flex w-full space-x-2">
 							<div className="flex space-x-6">
@@ -123,6 +122,20 @@ export default function Home() {
 									alt="randome img"
 									title={`${data.product[3]?.title}`}
 									price={`${data.product[3]?.price}`}
+								/>
+								<Card
+									href={`/`}
+									img={`${data.product[0]?.image}`}
+									alt="randome img"
+									title={`${data.product[0]?.title}`}
+									price={`${data.product[0]?.price}`}
+								/>
+								<Card
+									href={`/`}
+									img={`${data.product[0]?.image}`}
+									alt="randome img"
+									title={`${data.product[0]?.title}`}
+									price={`${data.product[0]?.price}`}
 								/>
 								<Card
 									href={`/`}
@@ -180,6 +193,20 @@ export default function Home() {
 									href={`/`}
 									img={`${data.product[0]?.image}`}
 									alt="randome img"
+									title={`${data.product[2]?.title}`}
+									price={`${data.product[2]?.price}`}
+								/>
+								<Card
+									href={`/`}
+									img={`${data.product[0]?.image}`}
+									alt="randome img"
+									title={`${data.product[2]?.title}`}
+									price={`${data.product[2]?.price}`}
+								/>
+								<Card
+									href={`/`}
+									img={`${data.product[0]?.image}`}
+									alt="randome img"
 									title={`${data.product[1]?.title}`}
 									price={`${data.product[1]?.price}`}
 								/>
@@ -187,7 +214,6 @@ export default function Home() {
 						</ScrollContainer>
 					</div>
 				</section>
-
 			</Container>
 		</Suspense>
 	);
