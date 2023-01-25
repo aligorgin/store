@@ -1,7 +1,6 @@
+import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-
-import { ChevronUp } from '../icons/chevron-up';
 
 interface Props {
 	question: string;
@@ -19,7 +18,7 @@ export default function Disclosure({ question, answer, isActive, open }: Props) 
 					'flex items-center justify-between bg-neutral-800 p-4 font-[400]'
 				)}
 			>
-				<ChevronUp iconClass={clsx(isActive ? 'rotate-0' : 'rotate-180')} />
+				<ChevronUpIcon className={clsx('w-6', isActive ? 'rotate-0' : 'rotate-180')} />
 				<p>{question}</p>
 			</div>
 			{isActive && (
