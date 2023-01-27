@@ -8,24 +8,28 @@ interface Props {
 	img: string;
 	href: string;
 	alt: string;
+	colors: boolean;
 	className?: string;
 }
 
-export default function Card({ title, price, img, href, alt, className }: Props) {
+export default function BigCard({ title, price, img, href, alt, colors, className }: Props) {
 	return (
 		<Link href={href}>
-			<div className="h-48 w-48">
+			<div className="h-64 w-64">
 				<Image
+					alt={alt}
 					src={img}
 					width={0}
 					height={0}
-					alt={alt}
 					sizes="100vw"
 					className={clsx('h-full w-full rounded-lg', className)}
 				/>
+				<p className="pt-4 text-sm font-[200] opacity-80">{title}</p>
+				<div className="flex items-center justify-between pt-1">
+					<span className="text-lg ">{price}</span>
+					<span className={clsx(colors && 'h-3 w-3 rounded-full bg-red-700')} />
+				</div>
 			</div>
-			<p className="pt-2 text-sm opacity-80">{title}</p>
-			<p className="text-lg pt-1">{price}</p>
 		</Link>
 	);
 }

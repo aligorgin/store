@@ -3,7 +3,7 @@ import Container from '../ui/components/Container';
 export default function Us() {
 	return (
 		<Container title={'ما'}>
-			<div className="mt-8 rounded-lg border-2 border-neutral-800 p-6">
+			<div className="mt-6 rounded-lg border-2 border-neutral-800 p-6">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium sequi nihil, modi
 				neque maiores, praesentium tempora, vitae eos optio doloremque. Non suscipit facere quasi
 				necessitatibus, inventore ullam architecto et.lorem Lorem ipsum, dolor sit amet consectetur

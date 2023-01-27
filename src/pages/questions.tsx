@@ -7,7 +7,7 @@ export default function Questions() {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 	return (
 		<Container title="سوالاتتون ؟">
-			<div className="mt-10 flex flex-col space-y-5">
+			<div className="mt-6 flex flex-col space-y-5">
 				<Disclosure
 					isActive={activeIndex === 0}
 					open={() => setActiveIndex(0)}
