@@ -1,4 +1,3 @@
-import { faker } from '@faker-js/faker';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { FunnelIcon } from '@heroicons/react/24/outline';
 import { Suspense } from 'react';
@@ -8,7 +7,6 @@ import BigCard from '../ui/components/BigCard';
 import Container from '../ui/components/Container';
 
 export default function Products() {
-	const img = faker.image.sports();
 	return (
 		<Suspense fallback={null}>
 			<Container title="کفش ها">
@@ -44,16 +42,16 @@ export default function Products() {
 							href={`/`}
 							img={`${data.product[0]?.image}`}
 							alt="randome img"
-							title={`${data.product[2]?.title}`}
-							price={`${data.product[2]?.price}`}
+							title={`${data.product[1]?.title}`}
+							price={`${data.product[1]?.price}`}
 							colors={true}
 						/>
 						<BigCard
 							href={`/`}
 							img={`${data.product[0]?.image}`}
 							alt="randome img"
-							title={`${data.product[2]?.title}`}
-							price={`${data.product[2]?.price}`}
+							title={`${data.product[4]?.title}`}
+							price={`${data.product[4]?.price}`}
 							colors={true}
 						/>
 						<BigCard

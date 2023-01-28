@@ -40,10 +40,17 @@ export default function Container({
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<nav className="flex w-full items-center justify-between pt-6">
-				<div>
-					<div className="cursor-pointer rounded bg-orange-700 px-3 pb-2 pt-1 font-[300] transition hover:bg-orange-600 active:scale-90">
-						{Words.signIn}
-					</div>
+				<div className="flex space-x-6">
+					<Link href={'/signin'}>
+						<div className=" cursor-pointer rounded border border-orange-700 bg-orange-700 px-3 pb-2 pt-1 text-[15px] font-[300] transition hover:scale-105 active:scale-95">
+							{Words.signIn}
+						</div>
+					</Link>
+					<Link href={'/signup'}>
+						<div className=" cursor-pointer rounded border border-orange-700 px-3  pb-2 pt-1 text-[15px] font-[300] transition hover:scale-105 active:scale-95">
+							ثبت نام
+						</div>
+					</Link>
 				</div>
 				<div className="flex flex-row-reverse items-center">
 					<Link href={'/'} className="cursor-pointer pl-12">

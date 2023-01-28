@@ -1,10 +1,10 @@
 {
 	"product": [
-		{ "id": "0", "title": "adidas shoes", "price": "2T","image":"https://picsum.photos/200" },
-		{ "id": "1", "title": "nike pro max", "price": "3.4T","image":"https://picsum.photos/200" },
-		{ "id": "2", "title": "adidas shoes 3", "price": "2.5T","image":"https://picsum.photos/200" },
-		{ "id": "3", "title": "nikey mikey", "price": "1.2T","image":"https://picsum.photos/200" },
-		{ "id": "4", "title": "nike next", "price": "6.4T","image":"https://picsum.photos/200" },
-		{ "id": "5", "title": "nike airmax", "price": "4.3","image":"https://picsum.photos/200" }
+		{ "id": "0", "title": "adidas shoes", "price": "2T", "image": "https://picsum.photos/200" },
+		{ "id": "1", "title": "nike pro max", "price": "3.4T", "image": "https://picsum.photos/200" },
+		{ "id": "2", "title": "adidas shoes 3", "price": "2.5T", "image": "https://picsum.photos/200" },
+		{ "id": "3", "title": "nikey mikey", "price": "1.2T", "image": "https://picsum.photos/200" },
+		{ "id": "4", "title": "nike next", "price": "6.4T", "image": "https://picsum.photos/200" },
+		{ "id": "5", "title": "nike airmax", "price": "4.3", "image": "https://picsum.photos/200" }
 	]
 }
