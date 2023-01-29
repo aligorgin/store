@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
@@ -18,7 +17,7 @@ export default function Home() {
 	const img: string = faker.image.sports();
 
 	return (
-		<Suspense fallback={null}>
+
 			<Container>
 				<section className="mt-8 w-full">
 					<Swiper
@@ -215,6 +214,5 @@ export default function Home() {
 					</div>
 				</section>
 			</Container>
-		</Suspense>
 	);
 }

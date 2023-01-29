@@ -1,11 +1,9 @@
 import { DiscordLogo } from 'phosphor-react';
-import { Suspense } from 'react';
 
 import Container from '../ui/components/Container';
 
 export default function SignIn() {
 	return (
-		<Suspense fallback={null}>
 			<Container title="sign in | bodo">
 				<div className="flex h-[38rem] items-center justify-center">
 					<a href="#">
@@ -16,6 +14,5 @@ export default function SignIn() {
 					</a>
 				</div>
 			</Container>
-		</Suspense>
 	);
 }

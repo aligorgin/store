@@ -1,6 +1,5 @@
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { FunnelIcon } from '@heroicons/react/24/outline';
-import { Suspense } from 'react';
 
 import data from '../../data.json';
 import BigCard from '../ui/components/BigCard';
@@ -8,7 +7,6 @@ import Container from '../ui/components/Container';
 
 export default function Products() {
 	return (
-		<Suspense fallback={null}>
 			<Container title="کفش ها">
 				<div className="mt-6">
 					<div className="flex justify-end space-x-8 border-t-[1px] border-neutral-600 pt-4">
@@ -105,6 +103,5 @@ export default function Products() {
 					</div>
 				</div>
 			</Container>
-		</Suspense>
 	);
 }
