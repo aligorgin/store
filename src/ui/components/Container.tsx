@@ -28,7 +28,7 @@ export default function Container({
 	title = 'بدو',
 	children
 }: {
-	title?: string;
+	title?: string | string[];
 	children: React.ReactNode;
 }) {
 	return (
