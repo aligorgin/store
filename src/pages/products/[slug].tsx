@@ -1,17 +1,24 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import useSWR from 'swr';
 
-import data from '../../../data.json';
 import Container from '../../ui/components/Container';
+
+const fetcher = (url: any) => fetch(url).then((res) => res.json());
+const API = '/api/products';
 
 export default function Products() {
 	const router = useRouter();
 	const { slug } = router.query;
-	console.log(slug);
+
+	const { data, error } = useSWR(API, fetcher);
+
+	if (error) return <div>error {error}</div>;
+
 	let currentData;
-	for (let i = 0; data.product.length > i; i++) {
-		if (data.product[i]?.title === slug) {
-			currentData = data.product[i];
+	for (let i = 0; data.length > i; i++) {
+		if (data[i]?.title === slug) {
+			currentData = data[i];
 		}
 	}
 	return (

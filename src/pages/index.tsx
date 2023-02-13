@@ -7,14 +7,22 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import useSWR from 'swr';
 
-import data from '../../data.json';
 import Card from '../ui/components/Card';
 import Container from '../ui/components/Container';
 import Words from './Words';
 
+const fetcher = (url: any) => fetch(url).then((res) => res.json());
+const API = '/api/products';
+
 export default function Home() {
 	const img: string = faker.image.sports();
+
+	const { data, error } = useSWR(API, fetcher);
+	console.log(data)
+
+	if (error) return <div>error {error}</div>;
 
 	return (
 		<Container>
@@ -101,7 +109,7 @@ export default function Home() {
 					<ScrollContainer horizontal={true} className="flex w-full space-x-2">
 						<div className="flex space-x-6">
 							{data &&
-								data.product.map((data) => {
+								data.map((data: any) => {
 									return (
 										<Card
 											key={data.id}
@@ -124,7 +132,7 @@ export default function Home() {
 					<ScrollContainer horizontal={true} className="flex w-full space-x-2">
 						<div className="flex space-x-6">
 							{data &&
-								data.product.map((data) => {
+								data.map((data: any) => {
 									return (
 										<Card
 											key={data.id}

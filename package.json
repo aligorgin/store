@@ -1,9 +1,6 @@
 {
 	"name": "storee",
 	"version": "0.1.0",
-	"prisma": {
-		"seed": "ts-node prisma/seed.ts"
-	},
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -42,5 +39,8 @@
 		"prisma": "^4.10.1",
 		"tailwindcss": "^3.2.6",
 		"ts-node": "^10.9.1"
+	},
+	"prisma": {
+		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
 	}
 }
