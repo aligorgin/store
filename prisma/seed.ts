@@ -5,11 +5,9 @@ import { products } from '../data/data';
 const prisma = new PrismaClient();
 
 async function main() {
-	console.log('Start seeding...');
   await prisma.product.createMany({
     data:products
   })
-	console.log(`Seeding finished.`);
 }
 
 main()

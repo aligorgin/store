@@ -1,6 +1,8 @@
 import localFont from '@next/font/local';
 import type { AppProps } from 'next/app';
+import { useMemo, useState } from 'react';
 
+import { ModelContext } from '../providers/ModalContext';
 import '../styles/globals.css';
 
 const myFont = localFont({
@@ -42,9 +44,14 @@ const myFont = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+	const [isClicked, setIsClicked] = useState<boolean>(false);
+	const providerValue = useMemo(() => ({ isClicked, setIsClicked }), [isClicked, setIsClicked]);
+
 	return (
-		<main className={`${myFont.variable} font-sans`}>
-			<Component {...pageProps} />
-		</main>
+		<ModelContext.Provider value={providerValue}>
+			<main className={`${myFont.variable} font-sans`}>
+				<Component {...pageProps} />
+			</main>
+		</ModelContext.Provider>
 	);
 }

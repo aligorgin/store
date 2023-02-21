@@ -11,6 +11,7 @@ import useSWR from 'swr';
 
 import Card from '../ui/components/Card';
 import Container from '../ui/components/Container';
+import Modal from '../ui/components/modal';
 import Words from './Words';
 
 const fetcher = (url: any) => fetch(url).then((res) => res.json());
@@ -20,7 +21,7 @@ export default function Home() {
 	const img: string = faker.image.sports();
 
 	const { data, error } = useSWR(API, fetcher);
-	console.log(data)
+	console.log(data);
 
 	if (error) return <div>error {error}</div>;
 
