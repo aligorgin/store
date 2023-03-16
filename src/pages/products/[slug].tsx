@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import useSWR from 'swr';
 
 import { ModelContext } from '../../providers/ModalContext';
@@ -12,7 +12,6 @@ const API = '/api/products';
 
 export default function Products() {
 	const { isClicked, setIsClicked } = useContext(ModelContext);
-	console.log(isClicked);
 	const router = useRouter();
 	const { slug } = router.query;
 
@@ -28,7 +27,6 @@ export default function Products() {
 	}
 	return (
 		<Container title={slug}>
-
 			<div className="mt-10 sm:mt-32">
 				<div className="flex w-full flex-col-reverse items-center px-28 sm:flex-row sm:justify-between">
 					<div className="flex flex-col space-y-10">

@@ -1,5 +1,5 @@
-import localFont from '@next/font/local';
 import type { AppProps } from 'next/app';
+import localFont from 'next/font/local';
 import { useMemo, useState } from 'react';
 
 import { ModelContext } from '../providers/ModalContext';

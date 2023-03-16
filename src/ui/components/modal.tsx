@@ -24,7 +24,7 @@ export default function Modal() {
 				<div
 					className={clsx(
 						isClicked ? 'scale-100 opacity-100' : 'scale-75 opacity-0',
-						'z-[999] w-11/12 rounded-lg bg-black transition-all sm:w-[375px]'
+						'fixed z-[999] w-11/12 rounded-lg bg-black transition-all sm:w-[375px]'
 					)}
 				>
 					<div className="p-4">
